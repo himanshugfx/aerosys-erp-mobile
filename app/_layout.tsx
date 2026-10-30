@@ -68,7 +68,8 @@ function RootLayoutNav() {
   const segments = useSegments();
   const router = useRouter();
 
-  const { isAuthenticated, isLoading, checkAuth } = useAuthStore();
+  const { isAuthenticated, isLoading, checkAuth, user } = useAuthStore();
+  const mustChangePassword = !!user?.mustChangePassword;
   const [isReady, setIsReady] = useState(false);
   const [pushToken, setPushToken] = useState<string | null>(null);
 
@@ -128,30 +129,35 @@ function RootLayoutNav() {
   }, []);
 
   // Register push token with backend when user is authenticated
+  // (skipped until a required password change is done: the API rejects other calls until then)
   useEffect(() => {
-    if (isAuthenticated && pushToken) {
+    if (isAuthenticated && pushToken && !mustChangePassword) {
       import('../lib/api').then(({ apiClient }) => {
         apiClient.post('/api/mobile/auth/push-token', { token: pushToken })
           .then(() => console.log('Push token registered with backend'))
           .catch(err => console.error('Failed to register push token:', err));
       });
     }
-  }, [isAuthenticated, pushToken]);
+  }, [isAuthenticated, pushToken, mustChangePassword]);
 
   // Handle navigation based on auth state
   useEffect(() => {
     if (!isReady) return;
 
     const inAuthGroup = segments[0] === '(auth)';
+    const inChangePassword = segments[0] === 'change-password';
 
     if (!isAuthenticated && !inAuthGroup) {
       // Redirect to login if not authenticated
       router.replace('/(auth)/login');
-    } else if (isAuthenticated && inAuthGroup) {
+    } else if (isAuthenticated && mustChangePassword && !inChangePassword) {
+      // Default password must be changed before using the app
+      router.replace('/change-password');
+    } else if (isAuthenticated && !mustChangePassword && (inAuthGroup || inChangePassword)) {
       // Redirect to main app if authenticated
       router.replace('/(tabs)');
     }
-  }, [isAuthenticated, isReady, segments]);
+  }, [isAuthenticated, mustChangePassword, isReady, segments]);
 
   // Custom theme that matches our Colors
   const customDarkTheme = {
@@ -183,6 +189,7 @@ function RootLayoutNav() {
       <Stack>
         <Stack.Screen name="(auth)" options={{ headerShown: false }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="change-password" options={{ headerShown: false, gestureEnabled: false }} />
         <Stack.Screen name="support/[id]" options={{ headerShown: false }} />
         <Stack.Screen name="drone/[id]" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />

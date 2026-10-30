@@ -8,6 +8,7 @@ export interface User {
     fullName: string;
     phone: string;
     role: string;
+    mustChangePassword?: boolean;
 }
 
 export interface TeamMember {

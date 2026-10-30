@@ -129,18 +129,18 @@ export default function ProfileScreen() {
     };
 
     const handleUpdateProfile = async () => {
-        if (!fullName || !email) {
-            Alert.alert('Incomplete Profile', 'Full name and email are mandatory.');
+        if (!fullName) {
+            Alert.alert('Incomplete Profile', 'Full name is mandatory.');
             return;
         }
         setIsLoading(true);
         try {
+            // Email is managed by administrators and is not sent for update
             await apiClient.put('/api/mobile/profile', {
-                email,
                 fullName,
                 phone,
             });
-            updateUser({ email, fullName, phone });
+            updateUser({ fullName, phone });
             Alert.alert('Identity Synced', 'Your profile information has been successfully updated.');
             setEditProfileVisible(false);
         } catch (error: any) {
@@ -406,11 +406,11 @@ export default function ProfileScreen() {
                                 />
                                 <Text style={[styles.label, { color: theme.textSecondary }]}>EMAIL ADDRESS</Text>
                                 <TextInput
-                                    style={[styles.input, { backgroundColor: theme.inputBackground, borderColor: theme.border, color: theme.text }]}
-                                    placeholder="Enter email"
+                                    style={[styles.input, { backgroundColor: theme.inputBackground, borderColor: theme.border, color: theme.textSecondary }]}
+                                    placeholder="Set by your administrator"
                                     placeholderTextColor={theme.textSecondary}
                                     value={email}
-                                    onChangeText={setEmail}
+                                    editable={false}
                                     keyboardType="email-address"
                                     autoCapitalize="none"
                                 />
