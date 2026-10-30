@@ -102,7 +102,7 @@ export default function LoginScreen() {
                         <Text style={[styles.label, { color: theme.textSecondary }]}>Operator Identity</Text>
                         <TextInput
                             style={[styles.input, { backgroundColor: theme.inputBackground, borderColor: theme.border, color: theme.text }]}
-                            placeholder="Email or Username"
+                            placeholder="Email"
                             placeholderTextColor={theme.textSecondary + '80'}
                             value={email}
                             onChangeText={setEmail}
