@@ -185,7 +185,7 @@ export default function SupportScreen() {
             <View style={styles.header}>
                 <View>
                     <Text style={[styles.title, { color: theme.text }]}>
-                        AeroSys Support Desk
+                        Aerosys ERP Support Desk
                     </Text>
                     <Text style={[styles.subtitle, { color: theme.textSecondary }]}>
                         Operations & Technical Assistance

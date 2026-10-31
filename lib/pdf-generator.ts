@@ -84,7 +84,7 @@ export const generateOrderPDF = async (order: Order) => {
     </head>
     <body>
         <div class="header">
-            <h1>AEROSYS AVIATION</h1>
+            <h1>AEROSYS AVIATION INDIA PRIVATE LIMITED</h1>
             <p>MANUFACTURING ORDER DETAILS - ${order.contractNumber}</p>
         </div>
 
@@ -187,7 +187,7 @@ export const generateOrderPDF = async (order: Order) => {
         ` : ''}
 
         <div class="footer">
-            Aerosys Aviation India - Confidential Document - System Generated on ${new Date().toLocaleString()}
+            Aerosys Aviation India Private Limited - Confidential Document - System Generated on ${new Date().toLocaleString()}
         </div>
     </body>
     </html>

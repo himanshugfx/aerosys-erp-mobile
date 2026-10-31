@@ -36,7 +36,7 @@ export const API_BASE_URL = getApiUrl();
 
 // App Configuration
 export const APP_CONFIG = {
-    appName: 'AeroSky',
+    appName: 'Aerosys ERP',
     version: '1.0.0',
     // Add any other app-wide configuration here
 };

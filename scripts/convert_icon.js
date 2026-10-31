@@ -2,7 +2,7 @@ const sharp = require('sharp');
 const path = require('path');
 const fs = require('fs');
 
-const INPUT = path.join(__dirname, '../assets/images/aerosky.svg');
+const INPUT = path.join(__dirname, '../assets/images/aerosys-erp.svg');
 const OUTPUT_DIR = path.join(__dirname, '../assets/images');
 
 const SIZES = [

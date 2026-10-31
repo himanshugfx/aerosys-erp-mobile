@@ -63,7 +63,7 @@ function CustomDrawerContent(props: DrawerContentComponentProps) {
                 {user.fullName || user.username || 'User'}
               </Text>
               <Text style={[styles.userEmail, { color: 'rgba(255,255,255,0.6)' }]} numberOfLines={1}>
-                {user.role === 'SUPER_ADMIN' ? 'AeroSys Administrator' : 'AeroSys Aviation'}
+                {user.role === 'SUPER_ADMIN' ? 'Aerosys ERP Administrator' : 'Aerosys Aviation'}
               </Text>
             </View>
           </View>
