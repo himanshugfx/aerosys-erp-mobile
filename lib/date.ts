@@ -1,5 +1,5 @@
 /**
- * AeroSky Mobile Date Formatting Utilities
+ * Aerosys ERP Mobile Date Formatting Utilities
  * Standard Project Format: DD/MM/YYYY
  */
 

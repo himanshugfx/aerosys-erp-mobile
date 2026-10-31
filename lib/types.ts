@@ -1,4 +1,4 @@
-// Shared types for the AeroSky mobile app
+// Shared types for the Aerosys ERP mobile app
 // These are copied from the web app and can be reused directly
 
 export interface User {

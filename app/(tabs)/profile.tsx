@@ -113,7 +113,7 @@ export default function ProfileScreen() {
     const handleLogout = () => {
         Alert.alert(
             'Confirm Logout',
-            'Are you sure you want to sign out of your AeroSky account?',
+            'Are you sure you want to sign out of your Aerosys ERP account?',
             [
                 { text: 'Wait, no', style: 'cancel' },
                 {
@@ -288,14 +288,14 @@ export default function ProfileScreen() {
                     <Text style={[styles.userName, { color: theme.text }]} numberOfLines={1}>
                         {user?.fullName || user?.username || 'Authenticated User'}
                     </Text>
-                    <Text style={[styles.userEmail, { color: theme.textSecondary }]}>{user?.email || 'user@aerosky.io'}</Text>
+                    <Text style={[styles.userEmail, { color: theme.textSecondary }]}>{user?.email || 'user@aerosysaviation.in'}</Text>
 
                     <View style={styles.roleBadgeContainer}>
                         <View style={[styles.roleBadge, { backgroundColor: theme.primary + '15', borderColor: theme.primary + '30' }]}>
                             <Text style={[styles.roleBadgeText, { color: theme.primary }]}>{getRoleDisplay(user?.role || 'VIEWER')}</Text>
                         </View>
                         <View style={[styles.roleBadge, { backgroundColor: theme.success + '15', borderColor: theme.success + '30' }]}>
-                            <Text style={[styles.roleBadgeText, { color: theme.success }]}>AeroSys Aviation</Text>
+                            <Text style={[styles.roleBadgeText, { color: theme.success }]}>Aerosys Aviation</Text>
                         </View>
                     </View>
                 </View>
@@ -350,7 +350,7 @@ export default function ProfileScreen() {
                         <MenuItem
                             theme={theme}
                             icon="life-ring"
-                            title="AeroSky Liaison"
+                            title="Aerosys Liaison"
                             subtitle="Direct channel for assistance"
                             onPress={() => setHelpCenterVisible(true)}
                         />
@@ -378,8 +378,8 @@ export default function ProfileScreen() {
                 </View>
 
                 <View style={styles.footer}>
-                    <Text style={[styles.footerText, { color: theme.textSecondary }]}>AeroSky Flight OS</Text>
-                    <Text style={[styles.footerSubtext, { color: theme.border }]}>© 2026 Aerosys Aviation India</Text>
+                    <Text style={[styles.footerText, { color: theme.textSecondary }]}>Aerosys ERP</Text>
+                    <Text style={[styles.footerSubtext, { color: theme.border }]}>© 2026 Aerosys Aviation India Private Limited</Text>
                 </View>
             </ScrollView>
 

@@ -371,7 +371,7 @@ export default function AddOrderModal({ visible, onClose, onSubmit, initialData 
                                 style={[styles.input, { backgroundColor: theme.inputBackground, color: theme.text, borderColor: theme.border }]}
                                 value={droneModel}
                                 onChangeText={setDroneModel}
-                                placeholder="e.g. AeroSys Aviation X1"
+                                placeholder="e.g. Aerosys Aviation X1"
                                 placeholderTextColor={theme.textSecondary + '60'}
                             />
                         </View>

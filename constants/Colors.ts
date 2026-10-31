@@ -1,4 +1,4 @@
-// AeroSky Color Theme
+// Aerosys ERP Color Theme
 // Aviation-inspired color palette
 
 const primaryOrange = '#ea580c'; // Vibrant Orange

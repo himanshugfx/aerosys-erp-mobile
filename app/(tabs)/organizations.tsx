@@ -15,9 +15,9 @@ export default function OrganizationsScreen() {
                 <View style={[styles.iconBox, { backgroundColor: theme.primary + '15' }]}>
                     <FontAwesome name="building" size={36} color={theme.primary} />
                 </View>
-                <Text style={[styles.title, { color: theme.text }]}>AeroSys Aviation</Text>
+                <Text style={[styles.title, { color: theme.text }]}>Aerosys Aviation India Private Limited</Text>
                 <Text style={[styles.subtitle, { color: theme.textSecondary }]}>
-                    This platform is configured exclusively for AeroSys Aviation operations. Multi-tenancy and organization management have been retired.
+                    This platform is configured exclusively for Aerosys Aviation operations. Multi-tenancy and organization management have been retired.
                 </Text>
                 <TouchableOpacity
                     style={[styles.button, { backgroundColor: theme.primary }]}
